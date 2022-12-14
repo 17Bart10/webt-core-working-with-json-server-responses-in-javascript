@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Core_Working_with_JSON_Server_Responses</title>
+    <script type="text/javascript" src="./script.js"></script>
+    <link href="../dist/output.css" rel="stylesheet">
+</head>
+<body>
+
+
+    <!-- <button id="btn" onclick="fetchData()">Log Sample Data</button>
+    <br><br>
+    <div id="task"></div>
+    
+    
+    <button onclick="randomJob()">Log Random Job</button> -->
+
+
+    <script>
+        fetch('./OpenJsonData_wifi.json')
+    .then((response) => response.json())
+    .then((json) => console.log(json));
+        var jsonAsIDK = JSON.parse('./OpenJsonData_wifi.json');
+        console.log(jsonAsIDK);
+
+        // var json_data = {"2013-01-21":1,"2013-01-22":7};
+        // var result = [];
+        // for(var i in json_data)
+        //     result.push([i, json_data [i]]);
+
+
+        // var data = new google.visualization.DataTable();
+        // data.addColumn('string', 'Topping');
+        // data.addColumn('number', 'Slices');
+        // data.addRows(result);
+    </script>
+
+<div class="bg-black">    
+    <h1 >This is Black</h1>
+</div>
+    
+
+</body>
+</html>

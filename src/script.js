@@ -1,3 +1,5 @@
+
+// Infos for fetching Data
 function fetchData(){
         fetch('https://jsonplaceholder.typicode.com/todos/1')
         .then((response) => response.json())
@@ -8,9 +10,12 @@ function fetchData(){
         .catch((error) => console.log(error))
 }
 
-const data = ["asd", "dasdkljef", "asdkjhl3"];
-
 function randomJob(){
+    fetch('../OpenJsonData_wifi.json')
+    .then((response) => response.json())
+    .then((data) => {
+        
+    })
+    .catch((error) => console.log(error))
     var rdm = parseInt(Math.random() * (data.length - 0) + 0);
-    console.log(rdm + " " + data[rdm]);
 }
