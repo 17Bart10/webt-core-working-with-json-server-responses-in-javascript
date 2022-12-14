@@ -1,5 +1,9 @@
 # WEBT | CORE | Working with JSON Server Responses in JavaScript
 
+## How to build and run TailwindCSS
+npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch
+
+
 ## Overview
 The WIFI Vienna wants to help people who are unsatisfied with their job to choose a random new career path. They require an application which lets you define certain parameters and then presents users of the WebApp with a random job and details on training for it.
 
