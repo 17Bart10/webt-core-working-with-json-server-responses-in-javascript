@@ -13,7 +13,7 @@
     <p id="demo">Fetch eine File</p>
 
     <script>
-    let file = "OpenJsonData_wifi.json"
+    let file = "../resource/OpenJsonData_wifi.json"
     fetch(file)
     .then((response) => response.json())
     .then((data) => console.log(data));

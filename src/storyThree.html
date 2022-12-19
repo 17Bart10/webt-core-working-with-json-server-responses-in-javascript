@@ -16,13 +16,27 @@
     
     <button onclick="randomJob()">Log Random Job</button> -->
 
+    
 
     <script>
-        fetch('./OpenJsonData_wifi.json')
+
+    
+
+    fetch('../resource/OpenJsonData_wifi.json')
     .then((response) => response.json())
-    .then((json) => console.log(json));
-        var jsonAsIDK = JSON.parse('./OpenJsonData_wifi.json');
-        console.log(jsonAsIDK);
+    .then((json) => console.log(json))
+    .then((data) => document.getElementById("demo").innerHTML = data[0].CourseId);
+
+    var data = fetch('../resource/OpenJsonData_wifi.json').then((response) => response.json());
+
+    let text = "";
+    for (let i = 0; i < 3; i++) {
+    text += data[i] + "<br>";
+
+    document.getElementById("demo").innerHTML = text;
+    
+    }
+
 
         // var json_data = {"2013-01-21":1,"2013-01-22":7};
         // var result = [];
