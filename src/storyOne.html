@@ -10,13 +10,13 @@
     <h2>WEBT | CORE | Working with JSON Server Responses in JavaScript</h2>
     <h3>UserStory One:</h3>
 
-    <p id="demo">Fetch eine File</p>
+    <p id="output">Fetch eine File</p>
 
     <script>
     let url = "https://jsonplaceholder.typicode.com/todos/1"
     fetch(url)
     .then(x => x.text())
-    .then(y => document.getElementById("demo").innerHTML = y);
+    .then(y => document.getElementById("output").innerHTML = y);
     </script>
 
     

@@ -6,7 +6,7 @@
     <script type="text/javascript" src="./script.js"></script>
     <link href="../dist/output.css" rel="stylesheet">
 </head>
-<body>
+<body class="bg-black">
 
 
     <!-- <button id="btn" onclick="fetchData()">Log Sample Data</button>
@@ -18,28 +18,33 @@
 
 
     <script>
-        fetch('./OpenJsonData_wifi.json')
-    .then((response) => response.json())
-    .then((json) => console.log(json));
-        var jsonAsIDK = JSON.parse('./OpenJsonData_wifi.json');
-        console.log(jsonAsIDK);
+        function getRandomJob2(){
+            fetch('../resource/OpenJsonData_wifi.json')
+            .then((response) => response.json())
+            .then((json) => {
+            document.getElementById("output").innerHTML = json[Math.floor(Math.random()*json.length)]})
+        }
 
-        // var json_data = {"2013-01-21":1,"2013-01-22":7};
-        // var result = [];
-        // for(var i in json_data)
-        //     result.push([i, json_data [i]]);
-
-
-        // var data = new google.visualization.DataTable();
-        // data.addColumn('string', 'Topping');
-        // data.addColumn('number', 'Slices');
-        // data.addRows(result);
+        function getRandomJob(){
+            fetch('../resource/OpenJsonData_wifi.json')
+            .then((response) => response.json())
+            .then((json) => {
+                let job = json[Math.floor(Math.random()*json.length)];
+                document.getElementById("titel").innerHTML = "<div class=\"\"> Titel: </div> " . job.Titel;
+            })
+        }
     </script>
 
-<div class="bg-black">    
-    <h1 >This is Black</h1>
-</div>
-    
-
+    <div class="flex justify-center content-center mt-[9rem]">  
+        <div class="flex flex-col rounded-xl bg-gray-600 text-white">
+            <div class="flex justify-center mt-10 mx-10">
+            <div id="titel" class="text-white">Click the Button to Display random Job</div>
+        
+        </div>
+        <div class="flex justify-center rounded-xl mt-5 my-4">
+            <button class="bg-blue-700 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded-full" onclick="getRandomJob()">Click me</button>
+        </div>
+        </div>
+    </div>
 </body>
 </html>

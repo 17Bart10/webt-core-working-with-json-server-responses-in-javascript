@@ -10,15 +10,20 @@
     <h2>WEBT | CORE | Working with JSON Server Responses in JavaScript</h2>
     <h3>UserStory Two:</h3>
 
-    <p id="demo">Fetch eine File</p>
+    <p id="output">Fetch eine File</p>
 
     <script>
-    let url = "OpenJsonData_wifi.json"
+    let url = "../resource/OpenJsonData_wifi.json"
+    // Nicht verwenden, da Browser abstürzt
+    // fetch(url)
+    // .then(x => x.text())
+    // .then(y => document.getElementById("output").innerHTML = y);
+    
     fetch(url)
     .then((response) => response.json())
     .then((data) => console.log(data));
 
-
+    
     </script>
 
     
