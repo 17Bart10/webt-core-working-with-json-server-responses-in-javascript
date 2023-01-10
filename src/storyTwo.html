@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WEBT | CORE | Working with JSON Server Responses in JavaScript</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      WEBT | CORE | Working with JSON Server Responses in JavaScript
+    </title>
+  </head>
+  <body>
     <h2>WEBT | CORE | Working with JSON Server Responses in JavaScript</h2>
     <h3>UserStory Two:</h3>
 
     <p id="demo">Fetch eine File</p>
 
     <script>
-    let file = "../resource/OpenJsonData_wifi.json"
-    fetch(file)
-    .then((response) => response.json())
-    .then((data) => console.log(data));
-
+      let file = "../resource/OpenJsonData_wifi.json";
+      fetch(file)
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+        });
     </script>
-
-    
-</body>
+  </body>
 </html>
