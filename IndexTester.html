@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEBT | CORE | Working with JSON Server Responses in JavaScript</title>
+</head>
+<body>
+    <style>
+        body {background-color: rgb(59 130 246); text-align: center;margin-inline-end: auto;}
+        body {font-family: 'Courier New', Courier, monospace;color: antiquewhite;}
+        button {background-color: crimson;color: antiquewhite; font-family: 'Times New Roman', Times, serif; padding-top: 0.5rem; padding-bottom: 0.5rem; padding-left: 1rem; padding-right: 1rem; font-weight: 700; border-radius: 0.25rem;font-size: large;}
+    </style>
+    <br> 
+    <br> 
+    <br> 
+    <br> 
+    <br> 
+    
+    <h2>Working with JSON Server Responses in JavaScript</h2>
+    <h3>UserStory Four</h3>
+
+    <section id="titel"></section>
+    <section id="courseId"></section>
+    <section id="location"></section>
+    <section id="description"></section>
+    <br>
+
+
+    <button onclick="getAttributes()">Lick me</button>
+    <p id="demo">Fetch eine File</p>
+
+    <script>
+    let url = "OpenJsonData_wifi.json"
+    function getAttributes(){
+    fetch(url)
+    .then((response) => response.json())
+    .then((data) => data[Math.floor(Math.random() * data.length)])
+    .then(karriere => {
+        document.getElementById("titel").innerHTML = karriere['Titel'];
+        document.getElementById('courseId').innerHTML = karriere['CourseId'];
+            document.getElementById('location').innerHTML = karriere['Province'];
+            document.getElementById('description').innerHTML = karriere['Description'];
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+    })
+
+}
+    </script>
+
+    
+</body>
+</html>
