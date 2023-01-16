@@ -16,7 +16,7 @@
     <br />
     <div class="flex items-center justify-center">
       <btn
-        id="get-job-btn"
+        id="btn-job"
         class="bg-blue-500 text-white font-bold py-2 px-4 rounded"
       >
         Get random career
@@ -37,12 +37,11 @@
       ];
 
       function getRandomCareer() {
-        const random = Math.floor(Math.random() * jobs.length);
-        const erg = document.getElementById("job-erg");
-        erg.innerText = jobs[random];
+        const rndm = Math.floor(Math.random() * jobs.length);
+        document.getElementById("job-erg").innerText = jobs[rndm];
       }
 
-      const btn = document.getElementById("get-job-btn");
+      const btn = document.getElementById("btn-job");
       btn.addEventListener("click", getRandomCareer);
     </script>
   </body>
