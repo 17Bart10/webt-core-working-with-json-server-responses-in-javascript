@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>WEBT | CORE | Working with JSON Server Responses in JavaScript</title>
+</head>
+<body class="text-white font-mono bg-teal-600	">
+  <!--
+    <style>
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+        body {background-color: rgb(59 130 246); text-align: center;margin-inline-end: auto;}
+        body {font-family: 'Courier New', Courier, monospace;color: antiquewhite;}
+        button {background-color: crimson;color: antiquewhite; font-family: 'Times New Roman', Times, serif; padding-top: 0.5rem; padding-bottom: 0.5rem; padding-left: 1rem; padding-right: 1rem; font-weight: 700; border-radius: 0.25rem;font-size: large;}
+    </style>-->
+    
+<!--<div class=" grid justify-items-center mx-20 ">
+    <h2 class="font-bold">Working with JSON Server Responses in JavaScript</h2>
+    <h3 class="font-semibold">UserStory Four</h3>
+
+    <section id="titel"></section><br>
+    <section id="courseId"></section><br>
+    <section id="location"></section><br>
+    <section id="description"></section><br>
+    <br>-->
+
+    <div id="bb" class="h-screen flex justify-center items-center flex-col">
+      <div id="textarea" class="invisible rounded-lg sm:w-2/3 w-11/12 m-5 my-10 mb-20 p-10">
+          <h1 id="titel" class="mb-4 text-3xl font-extrabold tracking-tight leading-none text-gray-900 md:text-4xl lg:text-5xl">Titel</h1>
+      
+          <div class="text-lg md:text-xl lg:text-2xl">
+              <strong>CoursesID: </strong>
+              <span id="course" ></span>
+          </div>
+          <div class="text-lg md:text-xl lg:text-2xl">
+              <strong>Location: </strong>
+              <span id="location"></span>
+          </div>
+          <div class="text-xl mt-5">
+              <p class="mt-5 font-semibold text-xl md:text-2xl lg:text-3xl">Description:</p>
+              <p class="text-base md:text-lg lg:text-xl" id="description"></p>
+          </div>
+      </div>
+      <button class="font-serif text-white font-semibold p-3 rounded mb-20 bg-rose-600" onclick="getAttributes()">Lick me</button>
+  </div>
+  </div>
+
+
+
+
+    <script>
+    let url = "OpenJsonData_wifi.json"
+    function getAttributes(){
+    fetch(url)
+    .then((response) => response.json())
+    .then((data) => data[Math.floor(Math.random() * data.length)])
+    .then(karriere => {
+        document.getElementById("titel").innerHTML = karriere['Titel'];
+        document.getElementById('course').innerHTML = karriere['CourseId'];
+            document.getElementById('location').innerHTML = karriere['Province'];
+            document.getElementById('description').innerHTML = karriere['Description'];
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+    })
+    document.getElementById('bb').classList.remove('h-screen');
+            document.getElementById('textarea').classList.remove('invisible');
+}
+    </script>
+
+    
+</body>
+</html>
