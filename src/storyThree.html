@@ -1,45 +1,48 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Core_Working_with_JSON_Server_Responses</title>
     <script type="text/javascript" src="./script.js"></script>
-    <link href="../dist/output.css" rel="stylesheet">
-</head>
-<body>
-
-
-    <!-- <button id="btn" onclick="fetchData()">Log Sample Data</button>
-    <br><br>
-    <div id="task"></div>
-    
-    
-    <button onclick="randomJob()">Log Random Job</button> -->
-
+    <link href="../dist/output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+  </head>
+  <body class="bg-slate-800">
+    <h1 class="text-white text-4xl font-bold text-center">Get random Career</h1>
+    <p class="text-white text-center">
+      Drücke den Knopf um einen zufälligen Job zu erhalten
+    </p>
+    <br />
+    <div class="flex items-center justify-center">
+      <btn
+        id="btn-job"
+        class="bg-blue-500 text-white font-bold py-2 px-4 rounded"
+      >
+        Get random career
+      </btn>
+    </div>
+    <div class="h-3"></div>
+    <div id="job-erg" class="text-white text-center text-2xl uppercase"></div>
 
     <script>
-        fetch('./OpenJsonData_wifi.json')
-    .then((response) => response.json())
-    .then((json) => console.log(json));
-        var jsonAsIDK = JSON.parse('./OpenJsonData_wifi.json');
-        console.log(jsonAsIDK);
+      const jobs = [
+        "Arzt",
+        "Lehrer",
+        "Tischler",
+        "Bäcker",
+        "Richter",
+        "Koch",
+        "Fotograf",
+      ];
 
-        // var json_data = {"2013-01-21":1,"2013-01-22":7};
-        // var result = [];
-        // for(var i in json_data)
-        //     result.push([i, json_data [i]]);
+      function getRandomCareer() {
+        const rndm = Math.floor(Math.random() * jobs.length);
+        document.getElementById("job-erg").innerText = jobs[rndm];
+      }
 
-
-        // var data = new google.visualization.DataTable();
-        // data.addColumn('string', 'Topping');
-        // data.addColumn('number', 'Slices');
-        // data.addRows(result);
+      const btn = document.getElementById("btn-job");
+      btn.addEventListener("click", getRandomCareer);
     </script>
-
-<div class="bg-black">    
-    <h1 >This is Black</h1>
-</div>
-    
-
-</body>
+  </body>
 </html>
